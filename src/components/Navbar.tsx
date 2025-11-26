@@ -85,7 +85,7 @@ const Navbar: React.FC = () => {
                 <Link
                   href="#"
                   id="enter-realm-btn"
-                  className="text-md px-5 py-2 rounded-md text-white font-medium transition-all hover:bg-white/10"
+                  className="text-lg px-5 py-2 rounded-md text-white font-medium transition-all hover:bg-white/10"
                 >
                   ENTER REALM
                 </Link>
@@ -155,7 +155,7 @@ const Navbar: React.FC = () => {
                 <Link
                   href="#"
                   id="enter-realm-btn"
-                  className="text-xl px-5 py-2 rounded-md text-white font-medium transition-all hover:bg-white/10"
+                  className="text-lg px-5 py-2 rounded-md text-white font-medium transition-all hover:bg-white/10"
                 >
                   ENTER REALM
                 </Link>
@@ -238,7 +238,7 @@ const Navbar: React.FC = () => {
                   href="#"
                   id="enter-realm-btn"
                   target="blank"
-                  className="text-xl px-5 py-2 rounded-md text-white font-medium transition-all hover:bg-white/10"
+                  className="text-lg px-5 py-2 rounded-md text-white font-medium transition-all hover:bg-white/10"
                 >
                   ENTER REALM
                 </Link>
