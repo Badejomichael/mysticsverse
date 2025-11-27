@@ -49,7 +49,7 @@ const JoinRealm: React.FC = () => {
         {/* SOCIAL ICONS */}
         <div className="flex items-center gap-6 mb-12 text-[#282828]">
           <a href="https://x.com/mysticsverse" target="blank"><FaXTwitter className="text-3xl cursor-pointer hover:opacity-80 transition"/></a>
-          <a href="https://t.co/HIyNL7jNQn" target="blank"><FaDiscord className="text-3xl cursor-pointer hover:opacity-80 transition" /></a>
+          <a href="https://discord.gg/mysticsverse" target="blank"><FaDiscord className="text-3xl cursor-pointer hover:opacity-80 transition" /></a>
         </div>
 
         {/* FOOTER TEXT */}
@@ -62,3 +62,4 @@ const JoinRealm: React.FC = () => {
 };
 
 export default JoinRealm;
+
