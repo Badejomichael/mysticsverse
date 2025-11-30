@@ -1,0 +1,113 @@
+@import "tailwindcss";
+@import "@rainbow-me/rainbowkit/styles.css";
+
+
+:root {
+  --background: black;
+  --foreground: white;
+  --accent-gold: #FA7B00CC;
+  --accent-gold2: #FA7B00;
+  --font-anton-regular: "Anton-Regular", sans-serif;
+  --font-blackheat: "Blackheat", sans-serif;
+  --font-Inter: "Inter", sans-serif;
+}
+
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var( --font-Inter);
+}
+
+h1, h2 {
+  font-family: var( --font-anton-regular);
+  letter-spacing: 0;
+}
+
+
+#enter-realm-btn {
+  background-color: var(--accent-gold);
+  padding: 10px;
+  font-family: var( --font-anton-regular);
+  letter-spacing: 1;
+}
+
+#enter-realm-btn-2 {
+  background-color: var(--accent-gold2);
+  padding: 10px;
+  font-family: var( --font-anton-regular);
+  letter-spacing: 1;
+}
+
+#connect-wallet-btn {
+  background-color: var(--accent-gold2);
+  padding: 10px;
+  font-family: var( --font-anton-regular);
+  letter-spacing: 1;
+}
+
+.checker-btn {
+  font-family: var( --font-anton-regular);
+  letter-spacing: 2 !important;
+}
+
+.menus {
+  font-family: var( --font-anton-regular);
+  letter-spacing: 1;
+}
+
+.explore-lore {
+  font-family: var( --font-anton-regular);
+  letter-spacing: 1;
+  cursor: pointer;
+}
+
+.mint-btn {
+  font-family: var( --font-anton-regular);
+  letter-spacing: 2 !important;
+}
+
+
+@keyframes scrollRight {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.animate-scroll-right {
+  animation: scrollRight 30s linear infinite;
+  width: 200%;
+}
+
+.animate-scroll-left {
+  animation: scrollLeft 30s linear infinite;
+  width: 200%;
+}
+
+
+@media(max-width: 767px) {
+  .animate-scroll-right {
+    animation: scrollRight 13s linear infinite;
+  }
+
+  .animate-scroll-left {
+    animation: scrollLeft 13s linear infinite;
+  }
+}
+
+.elemental-runes {
+   border-radius: 30px;
+   box-shadow: 0 0 40px 10px #6256A34F;
+}
