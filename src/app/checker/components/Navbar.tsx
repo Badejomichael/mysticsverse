@@ -65,7 +65,7 @@ const Navbar: React.FC = () => {
   const menuItems = [
     { label: "ABOUT", href: `/#about`, external: false },
     { label: "LORE", href: `/#lore`, external: false },
-    { label: "THE WORLD", href: `#`, external: false },
+    { label: "THE WORLD", href: `/#the-world`, external: false },
     { label: "TEAM", href: `/#team`, external: false },
   ];
 
@@ -239,5 +239,6 @@ const Navbar: React.FC = () => {
     </>
   );
 };
+
 
 export default Navbar;
