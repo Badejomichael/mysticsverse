@@ -16,13 +16,16 @@ const nextConfig: NextConfig = {
 
     // Server externals logic
     if (isServer) {
-      config.externals = [
-        ...(config.externals || []), 
-        '@walletconnect/universal-provider',
-        '@walletconnect/ethereum-provider',
-        'pino', 
-        'thread-stream', 
-      ];
+      // Fix: Assert that the value being spread is a string array, or an empty array
+config.externals = [
+  // Assert 'config.externals' is a string array (or similar array type) before spreading
+  ...((config.externals as string[] | undefined) || []), 
+  
+  '@walletconnect/universal-provider',
+  '@walletconnect/ethereum-provider',
+  'pino', 
+  'thread-stream', 
+];
     }
     return config;
   } // <-- NO COMMA HERE IF 'webpack' IS THE LAST PROPERTY
