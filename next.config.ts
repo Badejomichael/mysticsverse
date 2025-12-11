@@ -1,35 +1,27 @@
-import type { NextConfig } from 'next';
-import type { Configuration } from 'webpack'; // 1. Import Webpack Configuration type
+// ... (in your next.config.ts)
 
-const nextConfig: NextConfig = {
-  // ... (your existing config)
-  
-  // turbopack: {}, // (Optional: You can remove this now since you explicitly use --webpack)
-
-  // 2. Add explicit types to the webpack function parameters
   webpack: (config: Configuration, options) => {
     const { isServer } = options;
     
-    // 3. Fix the MetaMask SDK module not found warning
-    // This tells webpack to resolve the React Native-specific dependency to nothing (false)
+    // 1. Ensure 'resolve' object exists on the configuration
+    config.resolve = config.resolve ?? {};
+
+    // 2. Safely assign to 'alias', ensuring alias itself exists first
+    // Fix: 'config.resolve' is possibly 'undefined'
     config.resolve.alias = {
-        ...config.resolve.alias,
-        '@react-native-async-storage/async-storage': false,
+        // Use nullish coalescing (?? {}) to safely spread existing aliases
+        ...(config.resolve.alias ?? {}), 
+        '@react-native-async-storage/async-storage': false, 
     };
 
-    // Your existing server-side externals logic (if needed for packages like pino/thread-stream)
+    // 3. Your existing server-side externals logic
     if (isServer) {
       config.externals = [
         ...(config.externals || []),
-        '@walletconnect/universal-provider',
-        '@walletconnect/ethereum-provider',
-        'pino', 
-        'thread-stream', 
+        // ... (your externals list) ...
       ];
     }
 
     return config;
   },
-};
-
-export default nextConfig;
+// ...
