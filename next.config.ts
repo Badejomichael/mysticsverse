@@ -1,24 +1,28 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  // ... (your existing config)
-  webpack: (config, { isServer }) => {
-    // Only apply this to the server-side build where this package is likely used
+import type { NextConfig } from 'next';
+import type { Configuration } from 'webpack'; 
+
+const nextConfig: NextConfig = {
+  
+  webpack: (config: Configuration, options) => {
+    const { isServer } = options;
+    
+    config.resolve.alias = {
+        ...config.resolve.alias,
+        '@react-native-async-storage/async-storage': false,
+    };
+
     if (isServer) {
       config.externals = [
-        ...config.externals,
-        // Exclude the problematic logging/stream transport package from the server bundle
-        // This is often required for dependencies that use Node.js-specific modules like 'worker_threads'
+        ...(config.externals || []),
         '@walletconnect/universal-provider',
         '@walletconnect/ethereum-provider',
-        'pino', // Exclude pino itself
-        'thread-stream', // Exclude the direct cause of the errors
+        'pino', 
+        'thread-stream', 
       ];
     }
+
     return config;
   },
-  // If the above doesn't work, try disabling Turbopack temporarily
-  // Note: Turbopack is the default in Next.js 14+ for development, 
-  // but if you explicitly enabled it for production, you might need to check your setup.
 };
 
-module.exports = nextConfig;
+export default nextConfig;
