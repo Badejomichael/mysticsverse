@@ -2312,5 +2312,6 @@ export const eligibleAddresses = [
     "0x8FE8DaFeb266fFd6288B3F8BA84cC0d173059D20",
     "0xeef02e83159fc6dae7e6374e274dd2a323b0579a",
     "0x1d046ded4cf58ef7bf1a34432c82c05c8641a1af",
-    "0x3075Ef3461bdc074D4C5e3F2961EaF42a931244B",											
+    "0x3075Ef3461bdc074D4C5e3F2961EaF42a931244B",
+    "0xf7ff6599d9795b0fa810922e174bc3af1be17043",											
 ];
